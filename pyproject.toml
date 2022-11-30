@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "ase-md"
+version = "0.1.0"
+description = ""
+authors = ["PythonFZ <fabian.zills@web.de>"]
+readme = "README.md"
+packages = [{include = "ase_md"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+zntrack = {git = "https://github.com/zincware/ZnTrack.git", rev = "main"}
+ase = "^3.22.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+ruff = "^0.0.149"
+isort = "^5.10.1"
+pylint = "^2.15.7"
+jupyterlab = "^3.5.0"
+pytest = "^7.2.0"
+pytest-xdist = "^3.0.2"
+coverage = "^6.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 90
+preview = true
+
+[tool.isort]
+profile = 'black'
+multi_line_output = 3
+
+[tool.ruff]
+line-length = 90
+
+select = ["E", "F", "D", "N", "C", "ANN"]
+extend-ignore = [
+    "D213", "D203", "N802", "N801"
+]
