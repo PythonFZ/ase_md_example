@@ -1,4 +1,5 @@
 """ASE MD package."""
+
 import importlib.metadata
 import logging
 import sys
